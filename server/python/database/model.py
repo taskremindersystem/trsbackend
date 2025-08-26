@@ -72,7 +72,7 @@ class Task:
         """Create task from database row."""
         priority = row['priority']
         if not validate_priority(priority):
-            priority = 'medium'
+            priority = 'low'
 
         status = row['status']
         if not validate_status(status):
@@ -120,7 +120,7 @@ def get_current_timestamp() -> str:
     """Get current timestamp in the application's format."""
     return format_datetime(datetime.now())
 
-    
+
 def validate_task_description(description: str) -> bool:
     """
     Validate that the description is non-empty and not just whitespace.
